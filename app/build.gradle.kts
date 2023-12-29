@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 android {
@@ -66,4 +67,19 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("io.insert-koin:koin-androidx-compose:3.5.2-RC1")
+    implementation("app.cash.sqldelight:android-driver:2.0.0")
+    implementation("cafe.adriel.voyager:voyager-koin:1.0.0-rc10")
+
+    implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc10")
+
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+
+    api("androidx.core:core-ktx:1.12.0")
+    implementation("io.ktor:ktor-client-android:2.3.1")
+
 }
