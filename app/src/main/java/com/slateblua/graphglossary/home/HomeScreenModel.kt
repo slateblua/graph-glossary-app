@@ -37,10 +37,8 @@ class HomeScreenModel(val termRepo: TermRepo) : ScreenModel {
     }
 
     private fun setUserMessage(query: String) {
-        screenModelScope.launch {
-            _state.update {
-                it.copy(userMessage = query)
-            }
+        _state.update {
+            it.copy(userMessage = query)
         }
     }
     data class HomeState(
