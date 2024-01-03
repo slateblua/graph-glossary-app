@@ -8,14 +8,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-
-data class HomeState(
-    val terms: List<Term> = emptyList(),
-    val userMessage: String = "",
-)
 class HomeScreenModel(val termRepo: TermRepo) : ScreenModel {
 
-    private val _state = MutableStateFlow<HomeState>(HomeState())
+    private val _state = MutableStateFlow(HomeState())
     val state = _state.asStateFlow()
 
     init {
@@ -48,4 +43,10 @@ class HomeScreenModel(val termRepo: TermRepo) : ScreenModel {
             }
         }
     }
+    data class HomeState(
+        val terms: List<Term> = emptyList(),
+        val userMessage: String = "",
+    )
 }
+
+

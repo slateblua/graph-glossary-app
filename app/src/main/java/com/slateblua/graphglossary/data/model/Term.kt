@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Term(
     val term: String,
-    val definition: String,
+    val definition: String
 )
